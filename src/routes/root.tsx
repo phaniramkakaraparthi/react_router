@@ -1,4 +1,10 @@
 import { Link, Outlet } from "react-router-dom";
+import { getContacts } from "../contacts.js";
+
+export async function loader() {
+    const contacts = getContacts();
+    return { contacts };
+}
 
 export default function Root() {
   return (
